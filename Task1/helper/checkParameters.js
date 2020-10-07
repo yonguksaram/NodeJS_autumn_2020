@@ -8,13 +8,13 @@ module.exports = {
             throw e;
         }
 
-        if (!fs.existsSync(options.input)) {
+        if (options.input && !fs.existsSync(options.input)) {
             let e = new Error('Invalid path to input file');
             e.code = 'ERR_INVALID_ARG_VALUE';
             throw e;
         }
         
-        if (!fs.existsSync(options.output)) {
+        if (options.input && !fs.existsSync(options.output)) {
             let e = new Error('Invalid path to output file');
             e.code = 'ERR_INVALID_ARG_VALUE';
             throw e;
